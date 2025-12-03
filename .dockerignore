@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+README-RENDER.md
+docs/
+
+# Environment files (seront configurés sur Render)
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.claude/
+
+# Docker
+docker-compose.yml
+Dockerfile.dev
+
+# Logs
+*.log
+logs/
+
+# Données locales
+scriberr_data/
+data/
+media/
+output/
+config/
+
+# OS
+.DS_Store
+Thumbs.db
