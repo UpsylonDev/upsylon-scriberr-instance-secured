@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  scribberr:
+    image: ghcr.io/rishikanthc/scriberr:latest
+    container_name: scribberr
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${WEB_PORT:-3001}:8080"
+    volumes:
+      - scriberr_data:/app/data
+    networks:
+      - scribberr-network
+
+networks:
+  scribberr-network:
+    driver: bridge
+
+volumes:
+  scriberr_data:
