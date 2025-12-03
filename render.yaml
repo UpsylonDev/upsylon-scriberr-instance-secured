@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: scribberr
+    runtime: docker
+    repo: https://github.com/VOTRE_USERNAME/VOTRE_REPO
+    branch: vers-render-0.0.1
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PUID
+        value: 1000
+      - key: PGID
+        value: 1000
+      - key: TZ
+        value: Europe/Paris
+      - key: WHISPER_MODEL
+        value: base
+      - key: LANGUAGE
+        value: fr
+      - key: WEB_PORT
+        value: 8080
+    disk:
+      name: scriberr-data
+      mountPath: /app/data
+      sizeGB: 10
