@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   scribberr:
     image: ghcr.io/rishikanthc/scriberr:latest
