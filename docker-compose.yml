@@ -10,11 +10,11 @@ services:
     volumes:
       - scriberr_data:/app/data
     networks:
-      - scribberr-network
+      - mon_reseau_front
 
 networks:
-  scribberr-network:
-    driver: bridge
+  mon_reseau_front:
+    external: true
 
 volumes:
   scriberr_data:
