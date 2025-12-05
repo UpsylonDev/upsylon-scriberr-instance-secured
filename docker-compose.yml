@@ -3,8 +3,18 @@ services:
     image: ghcr.io/rishikanthc/scriberr:latest
     container_name: scribberr
     restart: unless-stopped
+    # 🔑 AJOUT CRITIQUE : Limite de mémoire pour Scribrr (2GB)
+    # Ceci empêche le service de saturer votre RAM de 8GB.
+    mem_limit: 2g
+    # 🔑 LIEN VERS LE FICHIER ENV (Pour les variables ci-dessus)
     env_file:
-      - .env
+      - .env 
+    # 🔑 AJOUT : Utilisation des variables d'environnement dans le conteneur
+    environment:
+      - WEB_URL=${SCRIBRR_WEB_URL}
+      - BASE_URL=${SCRIBRR_BASE_URL}
+      # Ajouter d'autres variables si nécessaires par Scribrr
+
     volumes:
       - scriberr_data:/app/data
     networks:
