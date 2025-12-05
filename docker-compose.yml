@@ -11,9 +11,10 @@ services:
       - .env 
     # 🔑 AJOUT : Utilisation des variables d'environnement dans le conteneur
     environment:
-      - WEB_URL=${SCRIBRR_WEB_URL}
-      - BASE_URL=${SCRIBRR_BASE_URL}
-      # Ajouter d'autres variables si nécessaires par Scribrr
+    - WEB_URL=https://writer.upsylon.tech
+    - BASE_URL=https://writer.upsylon.tech
+    - APP_BASE_URL=https://writer.upsylon.tech # ⬅️ NOUVEL ESSAI
+    # Ajouter d'autres variables si nécessaires par Scribrr
 
     volumes:
       - scriberr_data:/app/data
